@@ -1,0 +1,56 @@
+** endpoints :  User **
+
+1-  Get all users : GET - ok
+http://localhost:4000/api/v1/users 
+
+2- Create user : POST - ok
+http://localhost:4000/api/v1/users 
+
+{
+    "name"  : "user 1",
+    "email" : "user_1@gamil.com" ,
+    "password" : "123user_1"
+}
+
+3- Update name , password : PATCH - ok
+http://localhost:4000/api/v1/users 
+
+{
+    "name"  : "user 10",
+    "email" : "user_10@gamil.com"
+}
+
+4- Delete ( soft delete ): Delete - ok
+http://localhost:4000/api/v1/users/id_value
+where:  id_value=1 , 2 , .., n  => id of user  
+
+
+** endpoints :  task **
+
+1- Create Task : POST -ok
+http://localhost:4000/api/v1/tasks 
+{
+    "title"  : "Task 1",
+    "userId" : 1 ,
+    "startDate" : "2022-09-01 01:00:00",
+    "limitDate" : "2022-09-10 13:00:00",
+}
+
+2- Get all task : GET - ok
+http://localhost:4000/api/v1/tasks 
+
+3- Get for Status tasks -  Crtl status:exists : GET - ok
+http://localhost:4000/api/v1/tasks/(status) 
+
+where status : active, completed, late, cancelled
+
+4-  Update status task for id - Ctrl id:exists and status = "active" : PATCH  - ok
+http://localhost:4000/api/v1/tasks/(id)
+{
+    "finishDate" : "2022-09-01 01:00:00"
+}
+
+5-  Delete ( soft delete ) for id - Ctrl id:exists : DELETE
+http://localhost:4000/api/v1/tasks/(id) - ok
+
+
